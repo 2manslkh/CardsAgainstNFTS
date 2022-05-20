@@ -1,10 +1,5 @@
 {
   "private": true,
-  "workspaces": [
-    "blockchain",
-    "frontend",
-    "backend"
-  ],
   "scripts": {
     "dev": "concurrently \"cd ./blockchain && npx hardhat node\" \"cd ./frontend && npm run dev\" \"cd ./backend && npm run start\"",
     "start-blockchain": "cd ./blockchain && hh node",

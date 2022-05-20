@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Cards Against NFTs</title>
+    <meta name="description" content="Cards against NFTs...ironically an NFT" />
+    <meta name="author" content="Kenk" />
+    <style>
+      body {
+        margin: 10px auto;
+        max-width: 300px;
+        line-height: 1.2;
+        font-family: sans-serif;
+        font-size: 1em;
+        color: #fff;
+        background: #444;
+      }
+      h1 {
+        margin: 10px auto;
+        max-width: 300px;
+        line-height: 1.2;
+        font-family: sans-serif;
+        font-size: 2em;
+        color: #fff;
+        background: #444;
+      }
+      p {
+        margin: 15px auto;
+        max-width: 300px;
+        line-height: 1;
+        font-family: sans-serif;
+        font-size: 1em;
+        color: #fff;
+        background: #444;
+      }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <h1>Cards Against NFTs</h1>
+    <p id="output_p"></p>
+    <p id="output_q"></p>
+    <script>
+      function main() {
+        function GetURLParameter(sParam) {
+          var sPageURL = window.location.search.substring(1);
+          var sURLVariables = sPageURL.split("&");
+          for (var i = 0; i < sURLVariables.length; i++) {
+            var sParameterName = sURLVariables[i].split("=");
+            if (sParameterName[0] == sParam) {
+              return sParameterName[1].replaceAll("%20", " ");
+            }
+          }
+        }
+        const facts = ["NFTs are..."];
+        document.querySelector("#output_p").innerHTML = GetURLParameter("base");
+
+        document.querySelector("#output_q").innerHTML =
+          GetURLParameter("response");
+      }
+    </script>
+  </body>
+</html>

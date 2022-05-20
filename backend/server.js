@@ -2,8 +2,6 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const helmet = require("helmet");
-const jwt = require("express-jwt");
-const jwks = require("jwks-rsa");
 
 require("dotenv").config();
 
@@ -12,7 +10,8 @@ const connectDB = require("./config/db");
 // ----------------------------------
 // Routes Import
 // ----------------------------------
-const saveManager = require("./routes/SaveManager");
+const response = require("./routes/Response");
+// const sign = require("./routes/Signer");
 
 // ----------------------------------
 // Middleware
@@ -33,7 +32,8 @@ if (process.env.NODE_ENV === "dev") {
 // API Routes
 // ----------------------------------
 
-app.use("/api/v1/saveManager", saveManager);
+app.use("/response", response);
+// app.use("/sign", sign);
 
 // ----------------------------------
 // Express server
